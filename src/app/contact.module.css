@@ -1,0 +1,224 @@
+.contactSection {
+  background-color: transparent;
+  position: relative;
+  z-index: 20;
+  padding: 10rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4rem;
+  position: relative;
+}
+
+/* 3D Shapes */
+.shape1, .shape2 {
+  position: absolute;
+  pointer-events: none;
+  z-index: 50; /* Placed on top of everything */
+}
+
+.shape1 {
+  left: -15%;
+  bottom: -20%;
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape2 {
+  right: -10%;
+  top: -20%;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Left Column */
+.leftCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.title {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0 0 2rem 0;
+  text-transform: uppercase;
+  /* 3D Text Effect */
+  text-shadow: 
+    1px 1px 0 #555,
+    2px 2px 0 #555,
+    3px 3px 0 #444,
+    4px 4px 0 #444,
+    5px 5px 0 #333,
+    6px 6px 0 #333,
+    7px 7px 0 #222,
+    8px 8px 0 #222,
+    15px 15px 30px rgba(0,0,0,0.9);
+}
+
+.emailLink {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #d1d5db;
+  text-decoration: none;
+  border-bottom: 1px solid #d1d5db;
+  padding-bottom: 0.2rem;
+  align-self: flex-start;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.emailLink:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Right Column (Form) */
+.rightCol {
+  flex: 1;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+}
+
+.inputGroup {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.inputField {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.75rem 0;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.inputField:focus {
+  outline: none;
+  border-bottom-color: #ffffff;
+}
+
+.inputField::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+textarea.inputField {
+  resize: none;
+  min-height: 100px;
+}
+
+.sendBtn {
+  margin-top: 1rem;
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sendBtn:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Social Links under form */
+.socialLinks {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.socialIcon {
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialIcon:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  .leftCol {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .emailLink {
+    align-self: center;
+  }
+  
+  .rightCol {
+    max-width: 100%;
+    padding: 2rem;
+  }
+  
+  .shape1 { left: -10%; width: 180px; height: 180px; }
+  .shape2 { right: -5%; width: 120px; height: 120px; }
+}
+
+@media (max-width: 600px) {
+  .contactSection {
+    padding: 6rem 1.5rem;
+  }
+  .inputGroup {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .shape1, .shape2 {
+    display: none; /* Hide on small mobile to avoid clutter */
+  }
+}

@@ -1,0 +1,53 @@
+.marqueeContainer {
+  width: 100%;
+  overflow: hidden;
+  background-color: transparent;
+  padding: 5rem 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.animatedAscii {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 3.5rem;
+  font-weight: 900;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  user-select: none;
+  
+  background: linear-gradient(
+    90deg,
+    #ec4899, /* Pink */
+    #8b5cf6, /* Purple */
+    #2dd4bf, /* Teal */
+    #fcd34d, /* Gold */
+    #ec4899  /* Pink for seamless loop */
+  );
+  background-size: 200% 100%;
+  animation: gradientSweep 5s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.4));
+}
+
+@keyframes gradientSweep {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@media (max-width: 768px) {
+  .animatedAscii {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .asciiText {
+    font-size: 1.5rem;
+  }
+  .marqueeContainer {
+    padding: 2.5rem 0;
+  }
+}

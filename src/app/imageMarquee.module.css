@@ -1,0 +1,55 @@
+.marqueeContainer {
+  width: 100%;
+  overflow: hidden;
+  background-color: transparent;
+  padding: 1rem 0 0 0; /* Removed bottom padding */
+  display: flex;
+  position: relative;
+  z-index: 10;
+  margin-top: -10px;
+}
+
+.scrollForward, .scrollReverse {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-width: max-content;
+}
+
+.scrollForward {
+  animation: scrollLeft 40s linear infinite;
+}
+
+.scrollReverse {
+  animation: scrollRight 40s linear infinite;
+}
+
+.imageCard {
+  position: relative;
+  width: 320px;
+  height: 220px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255,255,255,0.1);
+  flex-shrink: 0;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.imageCard:hover {
+  transform: scale(1.05) translateY(-10px);
+  z-index: 5;
+}
+
+.image {
+  object-fit: cover;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 0.75rem)); }
+}
+
+@keyframes scrollRight {
+  0% { transform: translateX(calc(-50% - 0.75rem)); }
+  100% { transform: translateX(0); }
+}
