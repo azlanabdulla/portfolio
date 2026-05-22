@@ -36,7 +36,7 @@ export default function AboutSection() {
         }}
         viewport={{ once: false, amount: 0.1 }}
       >
-        <Image src="/3d_heart_v2.png" alt="3D Heart" width={200} height={200} className={styles.blendImage} priority />
+        <Image src="/3d_love.png" alt="3D Heart" width={200} height={200} className={styles.blendImage} priority unoptimized />
       </motion.div>
 
       {/* Star */}
@@ -52,7 +52,7 @@ export default function AboutSection() {
         }}
         viewport={{ once: false, amount: 0.1 }}
       >
-        <Image src="/3d_star_v2.png" alt="3D Star" width={250} height={250} className={styles.blendImage} priority />
+        <Image src="/3d_star1.png" alt="3D Star" width={250} height={250} className={styles.blendImage} priority unoptimized />
       </motion.div>
 
       {/* Cloud */}
