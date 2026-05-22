@@ -483,8 +483,10 @@
   }
   .aboutImage4 {
     left: -10%;
-    top: 75%;
+    top: auto;
+    bottom: 0%;
     transform: scale(0.5);
+    transform-origin: bottom left;
   }
   .aboutImage2 {
     right: -40%;
