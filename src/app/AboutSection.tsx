@@ -20,7 +20,7 @@ export default function AboutSection() {
         }}
         viewport={{ once: false, amount: 0.1 }}
       >
-        <Image src="/3d_flower_v2.png" alt="3D Flower" width={250} height={250} className={styles.blendImage} priority />
+        <Image src="/flower_transparent.png" alt="3D Flower" width={250} height={250} className={styles.blendImage} priority unoptimized />
       </motion.div>
 
       {/* Heart */}
@@ -68,7 +68,7 @@ export default function AboutSection() {
         }}
         viewport={{ once: false, amount: 0.1 }}
       >
-        <Image src="/3d_cloud_v2.png" alt="3D Cloud" width={300} height={300} className={styles.blendImage} priority />
+        <Image src="/cloud_transparent.png" alt="3D Cloud" width={300} height={300} className={styles.blendImage} priority unoptimized />
       </motion.div>
 
       <motion.h2 
