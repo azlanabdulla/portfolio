@@ -1,3 +1,3 @@
 
 
-Open [https://azlanabdulla-portfolio.vercel.app](https://azlanabdulla-portfolio.vercel.app) with your browser to see the result.
+click this link to see the result   [  https://azlanabdulla-portfolio.vercel.app](https://azlanabdulla-portfolio.vercel.app) 
